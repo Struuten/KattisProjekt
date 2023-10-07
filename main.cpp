@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-    int FitingCars = 0;
-    int rows = 4;
+    int FitingCars{};
+    int rows{4};
     int N;
     int cl[200];
     int L;
