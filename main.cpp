@@ -4,48 +4,33 @@ using namespace std;
 
 int main()
 {
-    int FitingCars{};
-    int rows{4};
+    int G;
     int N;
-    int cl[200];
-    int L;
-
+    int pos{2};
+    int a;
+    int b;
+    cin >> G;
     cin >> N;
-    cin >> L;
 
-    for (int i = 0; i <= N-1; i++)
+    for (int i = 0; i < N; i++)
     {
-        cin >> cl[i];
-    }
-
-   int rowNumber = 0;
-
-    int distanceLeft[4];
-    distanceLeft[0] = L;
-    distanceLeft[1] = L;
-    distanceLeft[2] = L;
-    distanceLeft[3] = L;
-
-
-    for (int i = 0; i <= N-1 ; i++)
-    {
-
-        if (distanceLeft[rowNumber] - cl[i] >= 0)
+        cin >> a;
+        cin >> b;
+        if (pos==a)
         {
-            FitingCars++;
-            distanceLeft[rowNumber] -=(cl[i] + 1);
-            rowNumber = 0;
+            pos = b;
+            continue;
         }
-        else
-        {
-            rowNumber++;
-            if (rowNumber < rows)
-            {
-                i--;
-            }
-            else {break;}
-        }
+        if(pos==b) pos = a;
 
     }
-    cout << FitingCars;
+    if (pos != G) {
+        cout << pos << endl << G;
+        return 0;
+    }
+    else{
+        if (G != 1) cout << 1 << endl;
+        if (G != 3) cout << 3 << endl;
+        if (G != 2) cout << 2 << endl;
+    }
 }
